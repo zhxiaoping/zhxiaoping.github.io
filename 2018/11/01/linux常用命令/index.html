@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="张小平">
 <meta property="og:description" content="查看盘剩余空间大小1df -h">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-18T13:55:03.139Z">
+<meta property="og:updated_time" content="2019-08-20T15:49:51.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用命令">
 <meta name="twitter:description" content="查看盘剩余空间大小1df -h">
@@ -296,7 +296,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 21:55:03" itemprop="dateModified" datetime="2019-08-18T21:55:03+08:00">2019-08-18</time>
+                <time title="Modified: 2019-08-20 23:49:51" itemprop="dateModified" datetime="2019-08-20T23:49:51+08:00">2019-08-20</time>
               </span>
             
           
@@ -342,13 +342,13 @@
 <h3 id="查询占用端口"><a href="#查询占用端口" class="headerlink" title="查询占用端口"></a>查询占用端口</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">netstat -anp</span></span><br></pre></td></tr></table></figure>
 
 <p>-a (all)显示所有选项，默认不显示LISTEN相关<br>-t (tcp)仅显示tcp相关选项<br>-u (udp)仅显示udp相关选项 -n 拒绝显示别名，能显示数字的全部转化成数字。-l 仅列出有在 Listen (监听) 的服務状态<br>-p 显示建立相关链接的程序名</p>
-<h3 id="打印空行行号"><a href="#打印空行行号" class="headerlink" title="打印空行行号"></a>打印空行行号</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk ‘<span class="regexp">/^$/</span>&#123;<span class="built_in">print</span> NR&#125;’ sed.txt</span><br></pre></td></tr></table></figure>
+<h3 id="打印空行行号"><a href="#打印空行行号" class="headerlink" title="打印空行行号"></a>打印空行行号</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">awk</span> <span class="string">'/^$/&#123;print NR&#125;'</span> sed.txt</span><br></pre></td></tr></table></figure>
 
-<h3 id="计算和"><a href="#计算和" class="headerlink" title="计算和"></a>计算和</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> sed.txt | awk -F “ “ ‘&#123;<span class="keyword">sum</span>+=<span class="variable">$2&#125;</span> END &#123;<span class="keyword">print</span> <span class="keyword">sum</span>&#125;’</span><br></pre></td></tr></table></figure>
+<h3 id="计算和"><a href="#计算和" class="headerlink" title="计算和"></a>计算和</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> sed.txt | awk -F <span class="string">" "</span> '&#123;<span class="keyword">sum</span>+=<span class="variable">$2&#125;</span> END &#123;<span class="keyword">print</span> <span class="keyword">sum</span>&#125;'</span><br></pre></td></tr></table></figure>
 
-<h3 id="按数字排序求和"><a href="#按数字排序求和" class="headerlink" title="按数字排序求和"></a>按数字排序求和</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sort</span> -<span class="keyword">n</span> <span class="keyword">test</span>.txt | awk ‘&#123;a+=<span class="variable">$0</span>;<span class="keyword">print</span> <span class="variable">$0&#125;</span> END &#123;<span class="keyword">print</span> “<span class="keyword">sum</span>”=a&#125;’</span><br></pre></td></tr></table></figure>
+<h3 id="按数字排序求和"><a href="#按数字排序求和" class="headerlink" title="按数字排序求和"></a>按数字排序求和</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sort</span> -<span class="keyword">n</span> <span class="keyword">test</span>.txt | awk '&#123;a+=<span class="variable">$0</span>;<span class="keyword">print</span> <span class="variable">$0&#125;</span> END &#123;<span class="keyword">print</span> "<span class="keyword">sum</span>”=a&#125;'</span><br></pre></td></tr></table></figure>
 
-<h3 id="替换内容"><a href="#替换内容" class="headerlink" title="替换内容"></a>替换内容</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -<span class="selector-tag">i</span> ‘s/xx/xx/g’ filepath</span><br></pre></td></tr></table></figure>
+<h3 id="替换内容"><a href="#替换内容" class="headerlink" title="替换内容"></a>替换内容</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -<span class="selector-tag">i</span> <span class="string">'s/xx/xx/g'</span> filepath</span><br></pre></td></tr></table></figure>
 
 <h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br></pre></td></tr></table></figure>
 
@@ -356,7 +356,7 @@
 
 <h3 id="反选文件，移动到上层目录"><a href="#反选文件，移动到上层目录" class="headerlink" title="反选文件，移动到上层目录"></a>反选文件，移动到上层目录</h3><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | <span class="type">grep</span> -v <span class="number">1</span> | <span class="type">mv</span> $(xargs) ../</span><br></pre></td></tr></table></figure>
 
-<h3 id="批量改名"><a href="#批量改名" class="headerlink" title="批量改名"></a>批量改名</h3><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rename</span> originname replacenme</span><br></pre></td></tr></table></figure>
+<h3 id="批量改名"><a href="#批量改名" class="headerlink" title="批量改名"></a>批量改名</h3><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rename</span> originname replacenme ./*</span><br></pre></td></tr></table></figure>
 
 <h3 id="找文件名"><a href="#找文件名" class="headerlink" title="找文件名"></a>找文件名</h3><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">find</span> /<span class="built_in">path</span> -name kewords</span><br></pre></td></tr></table></figure>
 
@@ -377,6 +377,22 @@
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2018/11/01/scala常用语法/" rel="next" title="Scala常用于语法">
+                  <i class="fa fa-chevron-left"></i> Scala常用于语法
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
       </footer>
     
   </div>
@@ -390,13 +406,6 @@
 
           </div>
           
-    
-    
-  <div class="comments" id="comments">
-    <div id="lv-container" data-id="city" data-uid="MTAyMC80NjE0OS8yMjY2MA=="></div>
-  </div>
-  
-  
 
         </div>
           
@@ -433,7 +442,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -577,20 +586,6 @@
   
   <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
 
-
-<script>
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-</script>
 
 </body>
 </html>
