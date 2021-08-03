@@ -20,23 +20,24 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="观察者模式定义：The Observer Pattern defines a one-to-manydependency between objects so that when oneobject changes state, all of its dependents arenotified and updated automatically.  类图设计原理    努力在相互作用的对象之间进">
+  <meta name="description" content="定义The Observer Pattern defines a one-to-manydependency between objects so that when oneobject changes state, all of its dependents arenotified and updated automatically.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="张小平">
+<meta property="og:title" content="观察者模式">
 <meta property="og:url" content="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="张小平">
-<meta property="og:description" content="观察者模式定义：The Observer Pattern defines a one-to-manydependency between objects so that when oneobject changes state, all of its dependents arenotified and updated automatically.  类图设计原理    努力在相互作用的对象之间进">
+<meta property="og:description" content="定义The Observer Pattern defines a one-to-manydependency between objects so that when oneobject changes state, all of its dependents arenotified and updated automatically.">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/vx_images/4811438157136.png">
-<meta property="og:image" content="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/vx_images/2708241177302.png">
-<meta property="og:image" content="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/vx_images/2123752140843.png">
-<meta property="og:image" content="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/vx_images/5772812169269.png">
-<meta property="og:image" content="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/vx_images/4327309179971.png">
-<meta property="article:published_time" content="2021-08-03T07:12:53.277Z">
-<meta property="article:modified_time" content="2021-08-03T07:10:50.533Z">
+<meta property="og:image" content="http://example.com/images/4811438157136.png">
+<meta property="og:image" content="http://example.com/images/2708241177302.png">
+<meta property="og:image" content="http://example.com/images/2123752140843.png">
+<meta property="og:image" content="http://example.com/images/5772812169269.png">
+<meta property="og:image" content="http://example.com/images/4327309179971.png">
+<meta property="article:published_time" content="2021-08-03T07:41:10.000Z">
+<meta property="article:modified_time" content="2021-08-03T08:38:51.361Z">
 <meta property="article:author" content="张小平">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/vx_images/4811438157136.png">
+<meta name="twitter:image" content="http://example.com/images/4811438157136.png">
 
 <link rel="canonical" href="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
 
@@ -51,7 +52,7 @@
   };
 </script>
 
-  <title> | 张小平</title>
+  <title>观察者模式 | 张小平</title>
   
 
 
@@ -134,9 +135,9 @@
     <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-categories">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -207,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          观察者模式
         </h1>
 
         <div class="post-meta">
@@ -218,7 +219,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-08-03 15:12:53 / 修改时间：15:10:50" itemprop="dateCreated datePublished" datetime="2021-08-03T15:12:53+08:00">2021-08-03</time>
+              <time title="创建时间：2021-08-03 15:41:10 / 修改时间：16:38:51" itemprop="dateCreated datePublished" datetime="2021-08-03T15:41:10+08:00">2021-08-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
             </span>
 
           
@@ -232,12 +242,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><p>定义：The Observer Pattern defines a one-to-many<br>dependency between objects so that when one<br>object changes state, all of its dependents are<br>notified and updated automatically.</p>
-<p><img src="vx_images/4811438157136.png"></p>
-<p>类图<br><img src="vx_images/2708241177302.png"><br>设计原理<br>    努力在相互作用的对象之间进行松散耦合的设计</p>
-<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>气象站实时获取温度、湿度、气压，编写一个应用可以同步显示<br>当前天气， 其后统计， 气象预测， 并发布一个api，其他开发者<br>也可以实时订阅气象站数据<br><img src="vx_images/2123752140843.png"></p>
-<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p><img src="vx_images/5772812169269.png"><br>缺点：<br>    * 面向具体实现编码而非接口<br>    * 增加新的显示器都需要改变代码<br>    * 不能在运行时增加新的显示器订阅者<br>    * 没有将变化的部分封装起来</p>
-<h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="vx_images/4327309179971.png"></p>
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Observer Pattern defines a one-to-many<br>dependency between objects so that when one<br>object changes state, all of its dependents are<br>notified and updated automatically.</p>
+<span id="more"></span>
+<p><img src="/images/4811438157136.png"></p>
+<p>类图<br><img src="/images/2708241177302.png"></p>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>气象站实时获取温度、湿度、气压，编写一个应用可以同步显示<br>当前天气， 气候统计， 气象预测， 并发布一个api，其他开发者<br>也可以实时订阅气象站数据<br><img src="/images/2123752140843.png"></p>
+<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p><img src="/images/5772812169269.png"><br>缺点：<br>    * 面向具体实现编码而非接口<br>    * 增加新的显示器都需要改变代码<br>    * 不能在运行时增加新的显示器订阅者<br>    * 没有将变化的部分封装起来</p>
+<h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="/images/4327309179971.png"></p>
+<h1 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h1><pre><code>努力在相互作用的对象之间进行松散耦合的设计
+</code></pre>
+<p><font color=red>备注</font>：<a target="_blank" rel="noopener" href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 
     </div>
 
@@ -246,17 +260,20 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2021/08/03/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" rel="prev" title="">
-      <i class="fa fa-chevron-left"></i> 
-    </a></div>
       <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/03/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" rel="next" title="策略模式">
+      策略模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -315,7 +332,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">观察者模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1"><span class="nav-number">2.</span> <span class="nav-text">任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">3.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E7%A1%AE%E8%A7%A3%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">正确解法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1"><span class="nav-number">2.</span> <span class="nav-text">任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80"><span class="nav-number">3.</span> <span class="nav-text">解法一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E7%A1%AE%E8%A7%A3%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">正确解法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">设计原理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -327,11 +344,22 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
+          <a href="/archives">
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>

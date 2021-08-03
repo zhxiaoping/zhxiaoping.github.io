@@ -1,32 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title>策略模式</title>
     <url>/2021/08/03/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><p>定义：The Strategy Pattern defines a family of algorithms,<br>encapsulates each one, and makes them interchangeable.<br>Strategy lets the algorithm vary independently from<br>clients that use it.</p>
-<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>设计一群会叫会游泳的鸭子，长相不同<br><img src="vx_images/114606130770.png"></p>
+    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Strategy Pattern defines a family of algorithms,<br>encapsulates each one, and makes them interchangeable.<br>Strategy lets the algorithm vary independently from<br>clients that use it.</p>
+<span id="more"></span>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>设计一群会叫会游泳的鸭子，长相不同<br><img src="/images/114606130770.png"></p>
 <p>让部分鸭子增加会飞的功能</p>
-<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p>利用继承在父类中增加fly方法，对于自定义的鸭子行为进行重写方法<br><img src="vx_images/2937315149196.png"><br>缺点：</p>
+<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p>利用继承在父类中增加fly方法，对于自定义的鸭子行为进行重写方法<br><img src="/images/2937315149196.png"><br>缺点：</p>
 <ul>
 <li>在多个子类中会存在重复代码</li>
 <li>不易在运行时改变鸭子行为</li>
 <li>不易获得所有鸭子行为</li>
 <li>改变父类容易影响到其他鸭子</li>
 </ul>
-<h1 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h1><p>将鸭子实现飞行和叫的接口<br><img src="vx_images/697503147063.png"><br>缺点：<br>重复代码过多<br>难以维护修改你需要找到所有实现的类一个个修改<br>没有代码重用</p>
-<h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="vx_images/5795704179898.png"></p>
+<h1 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h1><p>将鸭子实现飞行和叫的接口<br><img src="/images/697503147063.png"><br>缺点：<br>重复代码过多<br>难以维护修改你需要找到所有实现的类一个个修改<br>没有代码重用</p>
+<h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="/images/5795704179898.png"></p>
 <h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>把不同的部分拿出来进行封装，后期修改扩张的时候就不会影响到其他部分<br>面向接口编程<br>多写组合而非继承</p>
+<p><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>观察者模式</title>
     <url>/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><p>定义：The Observer Pattern defines a one-to-many<br>dependency between objects so that when one<br>object changes state, all of its dependents are<br>notified and updated automatically.</p>
-<p><img src="vx_images/4811438157136.png"></p>
-<p>类图<br><img src="vx_images/2708241177302.png"><br>设计原理<br>    努力在相互作用的对象之间进行松散耦合的设计</p>
-<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>气象站实时获取温度、湿度、气压，编写一个应用可以同步显示<br>当前天气， 其后统计， 气象预测， 并发布一个api，其他开发者<br>也可以实时订阅气象站数据<br><img src="vx_images/2123752140843.png"></p>
-<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p><img src="vx_images/5772812169269.png"><br>缺点：<br>    * 面向具体实现编码而非接口<br>    * 增加新的显示器都需要改变代码<br>    * 不能在运行时增加新的显示器订阅者<br>    * 没有将变化的部分封装起来</p>
-<h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="vx_images/4327309179971.png"></p>
+    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Observer Pattern defines a one-to-many<br>dependency between objects so that when one<br>object changes state, all of its dependents are<br>notified and updated automatically.</p>
+<span id="more"></span>
+<p><img src="/images/4811438157136.png"></p>
+<p>类图<br><img src="/images/2708241177302.png"></p>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>气象站实时获取温度、湿度、气压，编写一个应用可以同步显示<br>当前天气， 气候统计， 气象预测， 并发布一个api，其他开发者<br>也可以实时订阅气象站数据<br><img src="/images/2123752140843.png"></p>
+<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p><img src="/images/5772812169269.png"><br>缺点：<br>    * 面向具体实现编码而非接口<br>    * 增加新的显示器都需要改变代码<br>    * 不能在运行时增加新的显示器订阅者<br>    * 没有将变化的部分封装起来</p>
+<h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="/images/4327309179971.png"></p>
+<h1 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h1><pre><code>努力在相互作用的对象之间进行松散耦合的设计
+</code></pre>
+<p><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 ]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
 </search>
