@@ -14,9 +14,18 @@
 <li>不易获得所有鸭子行为</li>
 <li>改变父类容易影响到其他鸭子</li>
 </ul>
-<h1 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h1><p>将鸭子实现飞行和叫的接口<br><img src="/images/697503147063.png"><br>缺点：<br>重复代码过多<br>难以维护修改你需要找到所有实现的类一个个修改<br>没有代码重用</p>
+<h1 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h1><p>将鸭子实现飞行和叫的接口<br><img src="/images/697503147063.png"><br>缺点：</p>
+<ul>
+<li>重复代码过多</li>
+<li>难以维护修改你需要找到所有实现的类一个个修改</li>
+<li>没有代码重用</li>
+</ul>
 <h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="/images/5795704179898.png"></p>
-<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>把不同的部分拿出来进行封装，后期修改扩张的时候就不会影响到其他部分<br>面向接口编程<br>多写组合而非继承</p>
+<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><ul>
+<li>把不同的部分拿出来进行封装，后期修改扩张的时候就不会影响到其他部分</li>
+<li>面向接口编程</li>
+<li>多写组合而非继承</li>
+</ul>
 <p><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 ]]></content>
       <categories>
@@ -34,10 +43,49 @@
 <p><img src="/images/4811438157136.png"></p>
 <p>类图<br><img src="/images/2708241177302.png"></p>
 <h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>气象站实时获取温度、湿度、气压，编写一个应用可以同步显示<br>当前天气， 气候统计， 气象预测， 并发布一个api，其他开发者<br>也可以实时订阅气象站数据<br><img src="/images/2123752140843.png"></p>
-<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p><img src="/images/5772812169269.png"><br>缺点：<br>    * 面向具体实现编码而非接口<br>    * 增加新的显示器都需要改变代码<br>    * 不能在运行时增加新的显示器订阅者<br>    * 没有将变化的部分封装起来</p>
+<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p><img src="/images/5772812169269.png"><br>缺点：</p>
+<ul>
+<li>面向具体实现编码而非接口</li>
+<li>增加新的显示器都需要改变代码</li>
+<li>不能在运行时增加新的显示器订阅者</li>
+<li>没有将变化的部分封装起来</li>
+</ul>
 <h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="/images/4327309179971.png"></p>
-<h1 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h1><pre><code>努力在相互作用的对象之间进行松散耦合的设计
+<h1 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h1><ul>
+<li>努力在相互作用的对象之间进行松散耦合的设计</li>
+</ul>
+<p><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>装饰者模式</title>
+    <url>/2021/08/05/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Decorator Pattern attaches additional  responsibilities to an object dynamically.<br>Decorators provide a flexible alternative to  subclassing for extending functionality</p>
+<span id="more"></span>
+<h1 id="装饰着类图"><a href="#装饰着类图" class="headerlink" title="装饰着类图"></a>装饰着类图</h1><p><img src="/images/832903100845.png"></p>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>星巴克饮料类图如下图所示<br><img src="/images/2869517179271.png"><br>现需要对各个饮料增加调料steamed milk, soy, and mocha，计算价格。</p>
+<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><p>给每种调料的饮料编写一个类<br><img src="/images/3164940167138.png"></p>
+<p>缺点</p>
+<ul>
+<li>组合情况过多需要产生n种类</li>
+<li>若调料价格上涨，或增加新的调料后期很难维护</li>
+</ul>
+<h1 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h1><p>在父类中标记每种调料是否存在，cost方法中计算好调料价格以便子类调用。<br><img src="/images/4032754187304.png"><br><img src="/images/5988755179973.png"><br>缺点</p>
+<ul>
+<li>增加新的调料需要在父类中增加新的方法和修改cost方法</li>
+<li>对于这些饮料，并不需要所有调料，设计冗余</li>
+<li>若需要双份调料也无法该设计也无法满足要求</li>
+</ul>
+<h1 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h1><pre><code>代码对修改封闭，对扩展开放，此原则并不需要对每个部分都采用因为浪费时间，
+且不必要增加代码复杂度，我们只需要把精力放在最有可能变化的部分
 </code></pre>
+<h1 id="正确解法"><a href="#正确解法" class="headerlink" title="正确解法"></a>正确解法</h1><p><img src="/images/3375335186528.png"></p>
 <p><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 ]]></content>
       <categories>
