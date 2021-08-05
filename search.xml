@@ -66,7 +66,7 @@
   <entry>
     <title>装饰者模式</title>
     <url>/2021/08/05/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Decorator Pattern attaches additional  responsibilities to an object dynamically.<br>Decorators provide a flexible alternative to  subclassing for extending functionality</p>
+    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Decorator Pattern attaches additional  responsibilities<br>to an object dynamically. Decorators provide a flexible<br>alternative to  subclassing for extending functionality</p>
 <span id="more"></span>
 <h1 id="装饰着类图"><a href="#装饰着类图" class="headerlink" title="装饰着类图"></a>装饰着类图</h1><p><img src="/images/832903100845.png"></p>
 <h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>星巴克饮料类图如下图所示<br><img src="/images/2869517179271.png"><br>现需要对各个饮料增加调料steamed milk, soy, and mocha，计算价格。</p>
