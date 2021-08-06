@@ -97,7 +97,7 @@
   </entry>
   <entry>
     <title>工厂模式</title>
-    <url>/2021/08/03/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    <url>/2021/08/06/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="工厂模式定义"><a href="#工厂模式定义" class="headerlink" title="工厂模式定义"></a>工厂模式定义</h1><p>The Factory Method Pattern defines an interface<br>for creating an object, but lets subclasses decide which<br>class to instantiate. Factory Method lets a class defer<br>instantiation to subclasses.</p>
 <span id="more"></span>
 <h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>创建一个能生产不同pizza的类<br><img src="/images/1019703110846.png"></p>
