@@ -20,28 +20,46 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="张小平">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="工厂模式定义The Factory Method Pattern defines an interfacefor creating an object, but lets subclasses decide whichclass to instantiate. Factory Method lets a class deferinstantiation to subclasses.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="工厂模式">
+<meta property="og:url" content="http://example.com/2021/08/03/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="张小平">
+<meta property="og:description" content="工厂模式定义The Factory Method Pattern defines an interfacefor creating an object, but lets subclasses decide whichclass to instantiate. Factory Method lets a class deferinstantiation to subclasses.">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/images/1019703110846.png">
+<meta property="og:image" content="http://example.com/images/3640108129272.png">
+<meta property="og:image" content="http://example.com/images/590608137139.png">
+<meta property="og:image" content="http://example.com/images/749512157305.png">
+<meta property="og:image" content="http://example.com/images/896719149974.png">
+<meta property="og:image" content="http://example.com/images/2710839156529.png">
+<meta property="og:image" content="http://example.com/images/2519658177767.png">
+<meta property="og:image" content="http://example.com/images/5688420180163.png">
+<meta property="og:image" content="http://example.com/images/289910100847.png">
+<meta property="og:image" content="http://example.com/images/4777433176510.png">
+<meta property="og:image" content="http://example.com/images/2411335198950.png">
+<meta property="og:image" content="http://example.com/images/5495150185269.png">
+<meta property="article:published_time" content="2021-08-03T07:41:10.000Z">
+<meta property="article:modified_time" content="2021-08-06T02:26:58.019Z">
 <meta property="article:author" content="张小平">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/1019703110846.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/08/03/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>张小平</title>
+  <title>工厂模式 | 张小平</title>
   
 
 
@@ -177,246 +195,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/05/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="张小平">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张小平">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/05/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">装饰者模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-08-05 09:42:10 / 修改时间：09:54:16" itemprop="dateCreated datePublished" datetime="2021-08-05T09:42:10+08:00">2021-08-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Decorator Pattern attaches additional  responsibilities<br>to an object dynamically. Decorators provide a flexible<br>alternative to  subclassing for extending functionality</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/05/%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/03/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="张小平">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张小平">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/03/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">策略模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-03 15:41:10" itemprop="dateCreated datePublished" datetime="2021-08-03T15:41:10+08:00">2021-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-05 09:55:59" itemprop="dateModified" datetime="2021-08-05T09:55:59+08:00">2021-08-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Strategy Pattern defines a family of algorithms,<br>encapsulates each one, and makes them interchangeable.<br>Strategy lets the algorithm vary independently from<br>clients that use it.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/03/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="张小平">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张小平">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">观察者模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-08-03 15:41:10" itemprop="dateCreated datePublished" datetime="2021-08-03T15:41:10+08:00">2021-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-05 09:30:36" itemprop="dateModified" datetime="2021-08-05T09:30:36+08:00">2021-08-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The Observer Pattern defines a one-to-many<br>dependency between objects so that when one<br>object changes state, all of its dependents are<br>notified and updated automatically.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -432,10 +214,9 @@
       <meta itemprop="name" content="张小平">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/03/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">工厂模式</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          工厂模式
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -474,30 +255,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="工厂模式定义"><a href="#工厂模式定义" class="headerlink" title="工厂模式定义"></a>工厂模式定义</h1><p>The Factory Method Pattern defines an interface<br>for creating an object, but lets subclasses decide which<br>class to instantiate. Factory Method lets a class defer<br>instantiation to subclasses.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/03/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+        <h1 id="工厂模式定义"><a href="#工厂模式定义" class="headerlink" title="工厂模式定义"></a>工厂模式定义</h1><p>The Factory Method Pattern defines an interface<br>for creating an object, but lets subclasses decide which<br>class to instantiate. Factory Method lets a class defer<br>instantiation to subclasses.</p>
+<span id="more"></span>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>创建一个能生产不同pizza的类<br><img src="/images/1019703110846.png"></p>
+<p>若此时你需要删除greekpizza增加clampizza和veggiepizza需要怎么做呢<br><img src="/images/3640108129272.png"><br>根据之前的设计原则变化的部分要从不变的部分独立开来，且该类违反了开放封闭原则，每次<br>修改订单都需要修改oderpizza的代码。</p>
+<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>相同的部分为pizza的制作过程，变化的部分为new对象的过程，所以我们将创建对象的过程<br>封装起来，这就简单工厂模式<br><img src="/images/590608137139.png"><br><img src="/images/749512157305.png"></p>
+<h2 id="简单工厂模式类图"><a href="#简单工厂模式类图" class="headerlink" title="简单工厂模式类图"></a>简单工厂模式类图</h2><p><img src="/images/896719149974.png"></p>
+<h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><p>现纽约、芝加哥等地都想有自己的pizza店，但每个区域都想要不同口味的pizza<br>其中一种解法为我们给每个地区建各自的工厂类如下图代码所示<br><img src="/images/2710839156529.png"><br>另一种方法则为工厂模式</p>
+<h2 id="工厂模式类图"><a href="#工厂模式类图" class="headerlink" title="工厂模式类图"></a>工厂模式类图</h2><p><img src="/images/2519658177767.png"><br><strong>工厂方法的本质是将创建对象的方法独立出来，让子类决定实例化哪一个对象<br>先建立一个抽象类，在之类中实现创建方法，这样就将父类中客户端的代码和<br>子类的创建对象方法解耦</strong><br><img src="/images/5688420180163.png"><br><strong>备注：传参类型用string并不是一个好的方法无法保证参数安全，可考虑用枚举类</strong><br><img src="/images/289910100847.png"></p>
+<h1 id="抽象工厂模式定义"><a href="#抽象工厂模式定义" class="headerlink" title="抽象工厂模式定义"></a>抽象工厂模式定义</h1><p>The Abstract Factory Pattern provides an interface<br>for creating families of related or dependent objects<br>without specifying their concrete classes.</p>
+<h1 id="抽象工厂类图"><a href="#抽象工厂类图" class="headerlink" title="抽象工厂类图"></a>抽象工厂类图</h1><p><img src="/images/4777433176510.png"></p>
+<h1 id="任务-1"><a href="#任务-1" class="headerlink" title="任务"></a>任务</h1><p>现不同地区使用pizza的原料各不相同，请用抽象工厂表示<br><img src="/images/2411335198950.png"></p>
+<h1 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h1><p>依赖反转原理，依赖抽象而不依赖具体类<br>依赖反转：高层次的模块不应该依赖于低层次的模块，两者都应该依赖于抽象接口<br>以工厂模式为例pizzastore是高层次组件，pizza具体类为底层次组件两者都依赖于<br>同一个接口pizza<br><img src="/images/5495150185269.png"></p>
+<h1 id="简单工厂、工厂模式，抽象工厂的区别"><a href="#简单工厂、工厂模式，抽象工厂的区别" class="headerlink" title="简单工厂、工厂模式，抽象工厂的区别"></a>简单工厂、工厂模式，抽象工厂的区别</h1><p><strong>相同点：</strong> 本质都是封装对象的创建行为，将代码从具体类型中解耦出来，让子类实例化时决定创建具体类</p>
+<p>简单工厂是将创建对象方法封装成一个新类，和客户端代码是组合关系，工厂模式和客户端类是继承关系。<br>抽象工厂提供一个类来创建一个产品家族的抽象类型,<br>优点：可以把一群相关的产品集合起来创建。<br>缺点：如果新加入创建的产品，就必须要改变接口。</p>
+<p><strong>使用条件</strong>：当你需要创建产品家族和想让制造的相关产品集合起来时，<br>你可以使用抽象工厂。当你需要创建一种类型的对象时，你可以选择使用工厂方法。<br><font color=red>备注</font>：<a target="_blank" rel="noopener" href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/03/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="next" title="观察者模式">
+      观察者模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -550,6 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">工厂模式定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1"><span class="nav-number">2.</span> <span class="nav-text">任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">简单工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%B1%BB%E5%9B%BE"><span class="nav-number">3.1.</span> <span class="nav-text">简单工厂模式类图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">工厂模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E7%B1%BB%E5%9B%BE"><span class="nav-number">4.1.</span> <span class="nav-text">工厂模式类图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%E5%AE%9A%E4%B9%89"><span class="nav-number">5.</span> <span class="nav-text">抽象工厂模式定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E7%B1%BB%E5%9B%BE"><span class="nav-number">6.</span> <span class="nav-text">抽象工厂类图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1-1"><span class="nav-number">7.</span> <span class="nav-text">任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">设计原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E3%80%81%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%EF%BC%8C%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">9.</span> <span class="nav-text">简单工厂、工厂模式，抽象工厂的区别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

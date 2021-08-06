@@ -95,4 +95,30 @@
         <tag>设计模式</tag>
       </tags>
   </entry>
+  <entry>
+    <title>工厂模式</title>
+    <url>/2021/08/03/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="工厂模式定义"><a href="#工厂模式定义" class="headerlink" title="工厂模式定义"></a>工厂模式定义</h1><p>The Factory Method Pattern defines an interface<br>for creating an object, but lets subclasses decide which<br>class to instantiate. Factory Method lets a class defer<br>instantiation to subclasses.</p>
+<span id="more"></span>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>创建一个能生产不同pizza的类<br><img src="/images/1019703110846.png"></p>
+<p>若此时你需要删除greekpizza增加clampizza和veggiepizza需要怎么做呢<br><img src="/images/3640108129272.png"><br>根据之前的设计原则变化的部分要从不变的部分独立开来，且该类违反了开放封闭原则，每次<br>修改订单都需要修改oderpizza的代码。</p>
+<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>相同的部分为pizza的制作过程，变化的部分为new对象的过程，所以我们将创建对象的过程<br>封装起来，这就简单工厂模式<br><img src="/images/590608137139.png"><br><img src="/images/749512157305.png"></p>
+<h2 id="简单工厂模式类图"><a href="#简单工厂模式类图" class="headerlink" title="简单工厂模式类图"></a>简单工厂模式类图</h2><p><img src="/images/896719149974.png"></p>
+<h1 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h1><p>现纽约、芝加哥等地都想有自己的pizza店，但每个区域都想要不同口味的pizza<br>其中一种解法为我们给每个地区建各自的工厂类如下图代码所示<br><img src="/images/2710839156529.png"><br>另一种方法则为工厂模式</p>
+<h2 id="工厂模式类图"><a href="#工厂模式类图" class="headerlink" title="工厂模式类图"></a>工厂模式类图</h2><p><img src="/images/2519658177767.png"><br><strong>工厂方法的本质是将创建对象的方法独立出来，让子类决定实例化哪一个对象<br>先建立一个抽象类，在之类中实现创建方法，这样就将父类中客户端的代码和<br>子类的创建对象方法解耦</strong><br><img src="/images/5688420180163.png"><br><strong>备注：传参类型用string并不是一个好的方法无法保证参数安全，可考虑用枚举类</strong><br><img src="/images/289910100847.png"></p>
+<h1 id="抽象工厂模式定义"><a href="#抽象工厂模式定义" class="headerlink" title="抽象工厂模式定义"></a>抽象工厂模式定义</h1><p>The Abstract Factory Pattern provides an interface<br>for creating families of related or dependent objects<br>without specifying their concrete classes.</p>
+<h1 id="抽象工厂类图"><a href="#抽象工厂类图" class="headerlink" title="抽象工厂类图"></a>抽象工厂类图</h1><p><img src="/images/4777433176510.png"></p>
+<h1 id="任务-1"><a href="#任务-1" class="headerlink" title="任务"></a>任务</h1><p>现不同地区使用pizza的原料各不相同，请用抽象工厂表示<br><img src="/images/2411335198950.png"></p>
+<h1 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h1><p>依赖反转原理，依赖抽象而不依赖具体类<br>依赖反转：高层次的模块不应该依赖于低层次的模块，两者都应该依赖于抽象接口<br>以工厂模式为例pizzastore是高层次组件，pizza具体类为底层次组件两者都依赖于<br>同一个接口pizza<br><img src="/images/5495150185269.png"></p>
+<h1 id="简单工厂、工厂模式，抽象工厂的区别"><a href="#简单工厂、工厂模式，抽象工厂的区别" class="headerlink" title="简单工厂、工厂模式，抽象工厂的区别"></a>简单工厂、工厂模式，抽象工厂的区别</h1><p><strong>相同点：</strong> 本质都是封装对象的创建行为，将代码从具体类型中解耦出来，让子类实例化时决定创建具体类</p>
+<p>简单工厂是将创建对象方法封装成一个新类，和客户端代码是组合关系，工厂模式和客户端类是继承关系。<br>抽象工厂提供一个类来创建一个产品家族的抽象类型,<br>优点：可以把一群相关的产品集合起来创建。<br>缺点：如果新加入创建的产品，就必须要改变接口。</p>
+<p><strong>使用条件</strong>：当你需要创建产品家族和想让制造的相关产品集合起来时，<br>你可以使用抽象工厂。当你需要创建一种类型的对象时，你可以选择使用工厂方法。<br><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
 </search>
