@@ -172,6 +172,7 @@
 <h1 id="外观模式类图"><a href="#外观模式类图" class="headerlink" title="外观模式类图"></a>外观模式类图</h1><p><img src="/images/761949179276.png"></p>
 <h1 id="任务二"><a href="#任务二" class="headerlink" title="任务二"></a>任务二</h1><p>现有以下设备组建成家庭影院<br><img src="/images/2234253167143.png"><br>看电影前需要做以下动作<br><img src="/images/5430254187309.png"><br>对应以下代码<br><img src="/images/5665856179978.png"><br>通过外观模式可大大简化繁琐的操作步骤，外观类将影院的组件视作子系统，把看电影的动作都封装<br>成方法，简化客户端代码的使用且让客户端和系统组件解耦分离<br><img src="/images/5864801186533.png"><br>开关电影代码如下图所示<br><img src="/images/3542520182287.png"></p>
 <h1 id="装饰者模式、适配器模式、外观模式区别"><a href="#装饰者模式、适配器模式、外观模式区别" class="headerlink" title="装饰者模式、适配器模式、外观模式区别"></a>装饰者模式、适配器模式、外观模式区别</h1><p>装饰者模式：不改变接口，增加功能<br>适配器模式：将一个接口转换成另一个接口<br>外观模式： 让多个负责的接口可以被客户端简单使用</p>
+<p><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 ]]></content>
       <categories>
         <category>设计模式</category>
