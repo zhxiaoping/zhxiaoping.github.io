@@ -181,4 +181,40 @@
         <tag>设计模式</tag>
       </tags>
   </entry>
+  <entry>
+    <title>状态模式</title>
+    <url>/2021/08/11/%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>The State Pattern allows an object to alter its behavior<br>when its internal state changes. The object will appear to<br>change its class</p>
+<span id="more"></span>
+<h1 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h1><p><img src="/images/5405208150851.png"></p>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p><img src="/images/1530112169277.png"><br>现有状态机如上图所示，糖果机初始状态为没有硬币状态，插入硬币后切换到有硬币状态，转动转轴进入<br>糖果售卖状态分发后根据糖果的数量切换至售空状态或者无币状态请用java编写出代码</p>
+<h1 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h1><ol>
+<li><p>首先，收集所有糖果机的所有状态<br>无币、有币、售卖中、售空</p>
+</li>
+<li><p>创建一个变量来保存当前糖果机的状态，为每一个状态定义一个值</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> HAS_QUARTER = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> NO_QUARTER = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> SOLD = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> SOLD_OUT = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span> state  = SOLD_OUT;</span><br></pre></td></tr></table></figure></li>
+<li><p>收集出在该系统中所有可能发生的行为<br>插币、退币、分发糖果、转动转轴</p>
+</li>
+<li><p>现在我创建一个状态机的类， 对于每一个动作，我们要创建一个方法根据条件决定<br>做响应，我们可以写一个像下面的方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertQuarter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (state == HAS_QUARTER) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;you cant insert a quarter, the machine is sold out&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state == SOLD_OUT) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;you cant insert a quarter, the machine is sold out&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state == SOLD) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;please wait, we are already giving you a gumball&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state == NO_QUARTER) &#123;</span><br><span class="line">        state = HAS_QUARTER;</span><br><span class="line">        System.out.println(<span class="string">&quot;you inserted a quarter&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>备注：余下代码可在文章尾部找到连接<br>缺点：</p>
+</li>
+</ol>
+<ul>
+<li>代码违反开放封闭原则</li>
+<li>这个设计甚至不能算面向对象</li>
+<li>状态机的转换不明显都埋在一堆条件语句当中</li>
+<li>没有分装变化的部分</li>
+<li>后期增加有可能导致bug</li>
+</ul>
+<h1 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h1><p>通过状态模式实现如下图所示<br><img src="/images/134232177144.png"><br><img src="/images/2538648090852.png"></p>
+<p><img src="/images/2175751109278.png"><br>一般来说，当状态转变是固定，状态切换过程放在context中更合适，然而当转换是动态的，（例如有币状态<br>依赖于币的个数切换到无币状态或者售空状态）默认是放在状态类里面，这里我们通过context提供get和set<br>状态的方法来减少在状态类中硬编码<br><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
 </search>
