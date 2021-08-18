@@ -293,6 +293,7 @@
 <p>最后，通过一个main类来执行整个流程</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    MultiCity cities = <span class="keyword">new</span> MultiCity();</span><br><span class="line">    SingleVisitor singleVisitor = <span class="keyword">new</span> SingleVisitor();</span><br><span class="line">    cities.accept(singleVisitor);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>spark sql语法书解析</p>
+<p><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 ]]></content>
       <categories>
         <category>设计模式</category>
