@@ -330,10 +330,9 @@
 <li><p>Increase the number of partitions (which makes each task smaller and helps reducing memory consumption).</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--conf spark.sql.shuffle.partitions=2000</span><br></pre></td></tr></table></figure></li>
 <li><p>Configure the JVM option MaxDirectMemorySize if your Spark application involves reading Parquet files and/or encoding/decoding BASE64 string, etc.<br>By default, MaxDirectMemorySize is close to the size of heap memory size. So, if MaxDirectoryMemorySize is not set, Spark containers might use too much off-heap memory.Maximum recommended memoryOverhead is 25% of the executor memory</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--conf spark.executor.extraJavaOptions=-XX:MaxDirectMemorySize=8G</span><br></pre></td></tr></table></figure>
-<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://medium.com/analytics-vidhya/solving-container-killed-by-yarn-for-exceeding-memory-limits-exception-in-apache-spark-b3349685df16">Solving “Container Killed by Yarn For Exceeding Memory Limits” Exception in Apache Spark</a></p>
-</li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">--conf spark.executor.extraJavaOptions=-XX:MaxDirectMemorySize=8G</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://medium.com/analytics-vidhya/solving-container-killed-by-yarn-for-exceeding-memory-limits-exception-in-apache-spark-b3349685df16">Solving “Container Killed by Yarn For Exceeding Memory Limits” Exception in Apache Spark</a></p>
 <p><a href="https://aws.amazon.com/premiumsupport/knowledge-center/emr-spark-yarn-memory-limit/#:~:text=Memory%20overhead%20is%20the%20amount,libraries%2C%20or%20memory%20mapped%20files.">How do I resolve the error “Container killed by YARN for exceeding memory limits” in Spark on Amazon EMR?</a></p>
 <p><a href="https://stackoverflow.com/questions/40781354/container-killed-by-yarn-for-exceeding-memory-limits-10-4-gb-of-10-4-gb-physic">“Container killed by YARN for exceeding memory limits. 10.4 GB of 10.4 GB physical memory used” on an EMR cluster with 75GB of memory</a></p>
 <p><a href="https://www.youtube.com/watch?v=t97VJtPAL2s">https://www.youtube.com/watch?v=t97VJtPAL2s</a></p>
@@ -354,6 +353,28 @@
       <tags>
         <tag>spark</tag>
         <tag>issue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>zepplin中文显示修复</title>
+    <url>/2021/08/30/Zeppelin%20%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D/</url>
+    <content><![CDATA[<h1 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h1><p>当在zeppelin使用livy interpreter，sql查询结果含中文时，显示乱行或结果为空且中文显示为unicode码<span id="more"></span>，如下图所示<br><img src="/images/2435604110871.png"></p>
+<h1 id="大数据团队分析过程"><a href="#大数据团队分析过程" class="headerlink" title="大数据团队分析过程"></a>大数据团队分析过程</h1><p>zeppelin从livy拿到的是一个字符串形如：<br><img src="/images/4084004129297.png"><br>zeppelin解析结果字符串源码位置</p>
+<p>org.apache.zeppelin.livy.LivySparkSQLInterpreter#parseSQLOutput</p>
+<p>主要逻辑如下：</p>
+<p>根据spark.show()方法返回的字符串的第一行进行切割得出每列固定长度如上图的第一行+—–+—+<br>所以第一列字符串的长度为5，第二列字符串的长度为3.<br>由于spark.show() 方法为了对齐显示对中文进行了中文字符个数×2的操作，表现在第一行的占位上<br>但zepplin拿到的字符串中文还是占一个char，导致单元格起始和终止位置切割错误。显示乱行。</p>
+<p>中文显示为unicode码的原因是因为zepplin对字符进行了转义</p>
+<p>于是给社区提问题反馈<br><a href="https://issues.apache.org/jira/browse/ZEPPELIN-5458">https://issues.apache.org/jira/browse/ZEPPELIN-5458</a></p>
+<h1 id="bug-修复"><a href="#bug-修复" class="headerlink" title="bug 修复"></a>bug 修复</h1><p>修复思路由于spark.show 中文占两个char, zepplin 又是按一个char数位置<br>所以我们可以直接将每个中文替换成自身加一个特殊字符<br><img src="/images/3295905117164.png"><br>在添加回单元格内容的时候再将特使字符替换成空串<br><img src="/images/5586305137330.png"><br>中文显示unicode码部分则在转义源码部分屏蔽掉中文<br><img src="/images/1266006129999.png"><br>于是给社区提了个pr<br><a href="https://github.com/apache/zeppelin/pull/4179">https://github.com/apache/zeppelin/pull/4179</a></p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>修复后中文可正常显示如下图所示<br><img src="/images/3287206126554.png"></p>
+<p>性能测试<br>20万条记录一千万中文解析成table耗时2.117s<br>从时间复杂度上分析，排除掉buffer扩容因素，时间复杂度为o(n)<br><img src="/images/5025806122308.png"></p>
+]]></content>
+      <categories>
+        <category>问题解决</category>
+      </categories>
+      <tags>
+        <tag>issue</tag>
+        <tag>zeppelin</tag>
       </tags>
   </entry>
 </search>
