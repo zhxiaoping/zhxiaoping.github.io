@@ -455,7 +455,8 @@
 <p><img src="/images/2511453149383.png"><br>最后生成JDBCrelation</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">override def createRelation(</span><br><span class="line">    sqlContext: SQLContext,</span><br><span class="line">    parameters: Map[String, String]): BaseRelation = &#123;</span><br><span class="line">  val jdbcOptions = new JDBCOptions(parameters)</span><br><span class="line">  val resolver = sqlContext.conf.resolver</span><br><span class="line">  val timeZoneId = sqlContext.conf.sessionLocalTimeZone</span><br><span class="line">  val schema = JDBCRelation.getSchema(resolver, jdbcOptions)</span><br><span class="line">  val parts = JDBCRelation.columnPartition(schema, resolver, timeZoneId, jdbcOptions)</span><br><span class="line">  JDBCRelation(schema, parts, jdbcOptions)(sqlContext.sparkSession)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>备注JDBCRelation默认分区为1</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>强制广播优先级大于根据size广播优先级。broadcast join 运行效率远大于Sort Merge Join<br>若为hive表且spark可获取到hive的元数据信息，建议增大spark.sql.autoBroadcastJoinThreshold阈值进行广播join<br>若为spark无法获取到元数据信息的表，则使用以下语法强制广播，但必须保证此表不是大数据量否则容易暴内存</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>强制广播优先级大于根据size广播优先级。broadcast join 运行效率远大于Sort Merge Join<br>若为hive表且spark可获取到hive的元数据信息，建议增大spark.sql.autoBroadcastJoinThreshold阈值进行广播join</p>
+<p>若为spark无法获取到元数据信息的表，则使用以下语法强制广播，但必须保证此表不是大数据量否则容易暴内存</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT /*+ BROADCAST(t1) */ t1.a FROM t1 JOIN t2</span><br></pre></td></tr></table></figure>
 
 
@@ -479,6 +480,32 @@
       <tags>
         <tag>spark</tag>
         <tag>源码分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker命令</title>
+    <url>/2021/09/16/docker%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="查看所有正在运行的容器"><a href="#查看所有正在运行的容器" class="headerlink" title="查看所有正在运行的容器"></a>查看所有正在运行的容器</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+<span id="more"></span> 
+<h1 id="根据容器ID-stop"><a href="#根据容器ID-stop" class="headerlink" title="根据容器ID stop"></a>根据容器ID stop</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stop containerId</span><br></pre></td></tr></table></figure>
+<h1 id="查看所有容器"><a href="#查看所有容器" class="headerlink" title="查看所有容器"></a>查看所有容器</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<h1 id="查看所有容器id"><a href="#查看所有容器id" class="headerlink" title="查看所有容器id"></a>查看所有容器id</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker ps -a -q</span><br></pre></td></tr></table></figure>
+<h1 id="停止所有容器"><a href="#停止所有容器" class="headerlink" title="停止所有容器"></a>停止所有容器</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker stop $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<h1 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker  rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<h1 id="查看指定容器的日志"><a href="#查看指定容器的日志" class="headerlink" title="查看指定容器的日志"></a>查看指定容器的日志</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker logs CONTAINER</span><br></pre></td></tr></table></figure>
+<h1 id="进入container交互式窗口命令"><a href="#进入container交互式窗口命令" class="headerlink" title="进入container交互式窗口命令"></a>进入container交互式窗口命令</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it CONTAINER  bash</span><br></pre></td></tr></table></figure>
+<h1 id="帮助命令"><a href="#帮助命令" class="headerlink" title="帮助命令"></a>帮助命令</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker --help</span><br></pre></td></tr></table></figure>
+<h1 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker --version</span><br></pre></td></tr></table></figure>
+<h1 id="查看所有镜像"><a href="#查看所有镜像" class="headerlink" title="查看所有镜像"></a>查看所有镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+<h1 id="搜索镜像"><a href="#搜索镜像" class="headerlink" title="搜索镜像"></a>搜索镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker search &lt;IMAGE_ID/NAME&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker pull  &lt;IMAGE_ID&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker rmi &lt;IMAGE_ID&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
 </search>
