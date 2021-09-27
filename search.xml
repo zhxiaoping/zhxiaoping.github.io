@@ -515,12 +515,12 @@
     <content><![CDATA[<h1 id="迭代器模式定义"><a href="#迭代器模式定义" class="headerlink" title="迭代器模式定义"></a>迭代器模式定义</h1><p>The Iterator Pattern provides a way to<br>access the elements of an aggregate object<br>sequentially without exposing its underlying<br>representation.</p>
 <span id="more"></span>
 <h1 id="迭代器类图"><a href="#迭代器类图" class="headerlink" title="迭代器类图"></a>迭代器类图</h1><p><img src="/images/5859345170188.png"></p>
-<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>现有两家餐馆打算合并成一家，但是两家餐馆底层的数据存储结构不一致，一家<br>用Array，另一家用ArrayList，由于两家餐馆其他部分代码深度耦合各自的数据结构<br>请用迭代器模式将两者菜单合并。下图代码为菜品类<br><img src="vx_images/5515942150963.png"><br>A餐馆的菜单类<br><img src="vx_images/1446655169389.png"><br>B餐馆的菜单类<br><img src="vx_images/4304559157256.png"></p>
-<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p><img src="vx_images/2818035177427.png"><br>迭代器模式主要是实现iterator接口，可以隐藏内部集合的实现，又能遍历集合内所有元素。<br>该模式也符合单一责任链原则只负责遍历所有元素  </p>
+<h1 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h1><p>现有两家餐馆打算合并成一家，但是两家餐馆底层的数据存储结构不一致，一家<br>用Array，另一家用ArrayList，由于两家餐馆其他部分代码深度耦合各自的数据结构<br>请用迭代器模式将两者菜单合并。下图代码为菜品类<br><img src="/images/5515942150963.png"><br>A餐馆的菜单类<br><img src="/images/1446655169389.png"><br>B餐馆的菜单类<br><img src="/images/4304559157256.png"></p>
+<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p><img src="/images/2818035177427.png"><br>迭代器模式主要是实现iterator接口，可以隐藏内部集合的实现，又能遍历集合内所有元素。<br>该模式也符合单一责任链原则只负责遍历所有元素  </p>
 <h1 id="组合模式定义"><a href="#组合模式定义" class="headerlink" title="组合模式定义"></a>组合模式定义</h1><p>The Composite Pattern allows you to<br>compose objects into tree structures to<br>represent part-whole hierarchies. Composite<br>lets clients treat individual objects and<br>compositions of objects uniformly</p>
-<h1 id="组合模式类图"><a href="#组合模式类图" class="headerlink" title="组合模式类图"></a>组合模式类图</h1><p><img src="vx_images/3973011140968.png"></p>
-<h1 id="组合模式任务"><a href="#组合模式任务" class="headerlink" title="组合模式任务"></a>组合模式任务</h1><p><img src="vx_images/1873243159394.png"><br>现在我们要支持多个菜单，而且菜单中包含子菜单如上图所示，组合模式允许我们建立一个树形<br>对象结构，节点既包含对象组合又包含对象，使用组合结构，我们可以对组合和对象调用同一个<br>方法，换句话说，在大多数cases中，我们可以忽略组合和对象的不同</p>
-<h1 id="组合模式解法"><a href="#组合模式解法" class="headerlink" title="组合模式解法"></a>组合模式解法</h1><p><img src="vx_images/4105538170096.png"><br><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
+<h1 id="组合模式类图"><a href="#组合模式类图" class="headerlink" title="组合模式类图"></a>组合模式类图</h1><p><img src="/images/3973011140968.png"></p>
+<h1 id="组合模式任务"><a href="#组合模式任务" class="headerlink" title="组合模式任务"></a>组合模式任务</h1><p><img src="/images/1873243159394.png"><br>现在我们要支持多个菜单，而且菜单中包含子菜单如上图所示，组合模式允许我们建立一个树形<br>对象结构，节点既包含对象组合又包含对象，使用组合结构，我们可以对组合和对象调用同一个<br>方法，换句话说，在大多数cases中，我们可以忽略组合和对象的不同</p>
+<h1 id="组合模式解法"><a href="#组合模式解法" class="headerlink" title="组合模式解法"></a>组合模式解法</h1><p><img src="/images/4105538170096.png"><br><font color=red>备注</font>：<a href="https://github.com/zhxiaoping/designpattern">代码地址</a></p>
 ]]></content>
       <categories>
         <category>设计模式</category>
